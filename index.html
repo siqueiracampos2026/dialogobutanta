@@ -2526,8 +2526,8 @@ footer{
         <div class="loc-map-wrap">
           <iframe
             class="loc-iframe"
-            src="https://maps.google.com/maps?q=Rua+Dr%C3%A1usio,+150,+But ant%C3%A3,+S%C3%A3o+Paulo&z=16&output=embed"
-            allowfullscreen loading="lazy"
+            data-src="https://maps.google.com/maps?q=Rua+Dr%C3%A1usio,+150,+Butant%C3%A3,+S%C3%A3o+Paulo&z=16&output=embed"
+            allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
             style="pointer-events:all;">
           </iframe>
@@ -2681,13 +2681,10 @@ footer{
 </div>
 
 <footer>
-  <p>© 2026 Siqueira Campos — Especialista em Empreendimentos • Zona Oeste de SP</p>
-  <p>Boulevard Butantã | Rua Dráusio, 150 — Butantã, São Paulo/SP</p>
   <p style="color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;">CRECI: 92522-F &nbsp;·&nbsp; <a href="https://siqueiracamposoficial.com.br/" target="_blank" style="color:var(--gold);text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Siqueira Campos Investimento & Soluções Imobiliárias ↗</a></p>
   <p>Imagens meramente ilustrativas. Valores e condições sujeitos a alteração sem aviso prévio. Consulte nosso time para condições atualizadas.</p>
-  <p style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;">
-    🔒 Seus dados são protegidos pela <strong style="color:rgba(255,255,255,0.4);">LGPD (Lei 13.709/2018)</strong> · 
-    <a href="#politica" class="footer-lgpd-link">Política de Privacidade</a>
+  <p style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);">
+    🔒 <a href="#politica" class="footer-lgpd-link">Política de Privacidade</a>
   </p>
 </footer>
 
@@ -3061,6 +3058,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
+
+// ===== LAZY LOAD MAPA =====
+(function(){
+  var iframe = document.querySelector('.loc-iframe[data-src]');
+  if(!iframe) return;
+  var observer = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      iframe.src = iframe.dataset.src;
+      observer.disconnect();
+    }
+  },{rootMargin:'200px'});
+  observer.observe(iframe);
+})();
 
 // ===== LGPD =====
 function aceitarLGPD(){
