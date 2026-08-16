@@ -2944,22 +2944,22 @@ function subLead(e){
     body: formData
   }).catch(err => console.log('Email enviado'));
 
-  // 2. DISPARO GOOGLE ADS CONVERSÃO + abrir WhatsApp após confirmação
+  // 2. DISPARO GOOGLE ADS CONVERSÃO + redirecionar para página de obrigado
   const msg=`Olá Siqueira Campos! Me chamo ${n}.${int?' Interesse: '+int+'.':''}${aj?' Preciso de: '+aj+'.':''} Tel: ${t}. Email: ${em||'não informado'}.`;
   const waUrl=`https://wa.me/5511960998000?text=${encodeURIComponent(msg)}`;
 
-  function abrirWhatsApp(){
-    window.open(waUrl,'_blank');
+  function irParaObrigado(){
+    window.location.href = 'obrigado.html?wa=' + encodeURIComponent(waUrl);
   }
 
   if(typeof gtag !== 'undefined'){
     gtag('event','conversion',{
       'send_to':'AW-17600073671/s8LRCMmshOEcEMefr8hB',
-      'event_callback': abrirWhatsApp
+      'event_callback': irParaObrigado
     });
-    setTimeout(abrirWhatsApp, 1000);
+    setTimeout(irParaObrigado, 1000);
   } else {
-    abrirWhatsApp();
+    irParaObrigado();
   }
 
   // 4. MOSTRAR CONFIRMAÇÃO
