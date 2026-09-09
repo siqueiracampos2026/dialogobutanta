@@ -1,0 +1,20 @@
+# ===== ROBOTS.TXT - DIÁLOGO BUTANTÃ =====
+# Instruções para buscadores
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Rate limiting
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://www.dialogobutanta.com.br/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
