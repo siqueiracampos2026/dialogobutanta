@@ -1,0 +1,105 @@
+# ===== APACHE CONFIGURATION - DIÁLOGO BUTANTÃ =====
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Remove .html extension
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^\.]+)$ $1.html [NC, L]
+  
+  # Redirect to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# ===== BROWSER CACHING =====
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 2 days"
+  
+  # Images - 30 days
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  
+  # CSS/JS - 7 days
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType application/x-javascript "access plus 7 days"
+  
+  # Fonts - 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  
+  # Media - 30 days
+  ExpiresByType audio/mp3 "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>
+
+# ===== GZIP COMPRESSION =====
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/atom+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  
+  # Problematic types
+  SetEnvIfNoCase Request_URI \.(?:gif|jpg|jpeg|png|webp)$ no-gzip
+  SetEnvIfNoCase Request_URI \.woff$ no-gzip
+</IfModule>
+
+# ===== SECURITY HEADERS =====
+<IfModule mod_headers.c>
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Enable XSS protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Clickjacking protection
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Feature policy
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+</IfModule>
+
+# ===== UTF-8 ENCODING =====
+AddDefaultCharset utf-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+
+# ===== DISABLE DIRECTORY LISTING =====
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# ===== PROTECT SENSITIVE FILES =====
+<FilesMatch "^\.ht">
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(env|config|sql|backup)$">
+  Deny from all
+</FilesMatch>
