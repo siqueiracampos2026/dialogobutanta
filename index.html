@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diálogo Butantã - Boulevard Butantã. Apartamentos de Alto Padrão de 80m² a 134m². A 240m do Metrô Butantã. Siqueira Campos Imóveis.">
+  <title>Diálogo Butantã | Boulevard Butantã | Apartamentos Luxo | Siqueira Campos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #0F172A;
+      --slate: #1E293B;
+      --gold-champagne: #D4AF37;
+      --gold-accent: #E2B857;
+      --white: #FFFFFF;
+      --gray-light: #E2E8F0;
+      --green-whatsapp: #22C55E;
+      --text-secondary: #94A3B8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--navy);
+      color: var(--gray-light);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER CORPORATIVO ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      height: 70px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img {
+      height: 100%;
+      width: auto;
+      max-width: 150px;
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav {
+      display: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover {
+      color: var(--gold-champagne);
+    }
+
+    .cta-header {
+      background: linear-gradient(135deg, var(--gold-champagne), var(--gold-accent));
+      color: var(--navy);
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .cta-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--gold-champagne);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media(min-width: 768px) {
+      .nav { display: flex; }
+      .menu-toggle { display: none; }
+    }
+
+    /* ===== HERO PREMIUM ===== */
+    .hero {
+      margin-top: 70px;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+    }
+
+    .carousel-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gray-light);
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+      position: relative;
+    }
+
+    .carousel-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.6) 100%);
+    }
+
+    .carousel-slide-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(212, 175, 55, 0.1) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--white);
+    }
+
+    .hero-content h1 .highlight {
+      color: var(--gold-champagne);
+      display: inline;
+    }
+
+    .hero-content h2 {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--gray-light);
+      font-weight: 400;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-price-tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.12);
+      border: 2px solid var(--gold-champagne);
+      padding: 1.2rem 2.5rem;
+      border-radius: 8px;
+      color: var(--gold-champagne);
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-price-tag strong {
+      color: var(--gold-accent);
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      padding: 1.1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, var(--green-whatsapp), #16a34a);
+      color: var(--white);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(34, 197, 94, 0.5);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-champagne), var(--gold-accent));
+      color: var(--navy);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      font-weight: 800;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--gold-champagne);
+      font-weight: 600;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-accent);
+      color: var(--gold-accent);
+    }
+
+    .hero-signature {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 2rem;
+      line-height: 1.8;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding-top: 2rem;
+    }
+
+    .hero-signature strong {
+      color: var(--gold-champagne);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-signature .creci {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.3px;
+    }
+
+    .hero-signature .phone {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--gray-light);
+      font-weight: 600;
+    }
+
+    /* ===== SEÇÃO DECORADOS ===== */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .section-header h1 .highlight {
+      color: var(--gold-champagne);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--gray-light);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .decorados-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card-decorado {
+      background: var(--slate);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .card-decorado:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-champagne);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .card-img {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: #2a2a2a;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card-decorado:hover .card-img img {
+      transform: scale(1.08);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--gold-champagne);
+      color: var(--navy);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.5px;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card-specs {
+      display: flex;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      font-size: 0.85rem;
+      color: var(--gray-light);
+    }
+
+    .spec {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .spec-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-champagne);
+      border-radius: 50%;
+    }
+
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, var(--slate), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section .highlight {
+      color: var(--gold-champagne);
+    }
+
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--gray-light);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .experiencia-section {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .experiencia-section h3 {
+      font-size: 1.3rem;
+      color: var(--gold-champagne);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .experiencia-section p {
+      font-size: 1rem;
+      color: var(--gray-light);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .experiencia-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .exp-item {
+      padding: 1.5rem;
+      background: rgba(30, 41, 59, 0.5);
+      border-left: 3px solid var(--gold-champagne);
+      border-radius: 6px;
+    }
+
+    .exp-item strong {
+      color: var(--gold-champagne);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-item p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-align: left;
+    }
+
+    /* ===== ANIMAÇÕES ===== */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content h1 {
+      animation: fadeInDown 0.8s ease-out 0.2s both;
+    }
+
+    .hero-content h2 {
+      animation: fadeInDown 0.8s ease-out 0.4s both;
+    }
+
+    .hero-price-tag {
+      animation: fadeInDown 0.8s ease-out 0.6s both;
+    }
+
+    .hero-btns {
+      animation: fadeInDown 0.8s ease-out 0.8s both;
+    }
+
+    .hero-signature {
+      animation: fadeInDown 0.8s ease-out 1s both;
+    }
+
+    .card-decorado:nth-child(1) { animation-delay: 0.1s; }
+    .card-decorado:nth-child(2) { animation-delay: 0.2s; }
+    .card-decorado:nth-child(3) { animation-delay: 0.3s; }
+    .card-decorado:nth-child(4) { animation-delay: 0.4s; }
+    .card-decorado:nth-child(5) { animation-delay: 0.5s; }
+    .card-decorado:nth-child(6) { animation-delay: 0.6s; }
+    .card-decorado:nth-child(7) { animation-delay: 0.7s; }
+    .card-decorado:nth-child(8) { animation-delay: 0.8s; }
+    .card-decorado:nth-child(9) { animation-delay: 0.9s; }
+
+    /* ===== RESPONSIVO ===== */
+    @media(max-width: 768px) {
+      header {
+        padding: 0.8rem 1rem;
+        height: 60px;
+      }
+
+      .logo { font-size: 1.2rem; }
+
+      .cta-header {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero-content {
+        padding: 2rem 1.2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-content h2 {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .hero-btns {
+        gap: 0.8rem;
+        flex-direction: column;
+      }
+
+      .btn {
+        padding: 0.95rem 2rem;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+
+      .hero-price-tag {
+        font-size: 0.9rem;
+        padding: 1rem 1.8rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .hero-price-tag strong {
+        font-size: 1.1rem;
+      }
+
+      .hero-signature {
+        font-size: 0.8rem;
+        padding-top: 1.5rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .section-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .decorados-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .card-img {
+        height: 220px;
+      }
+
+      .cta-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .cta-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .experiencia-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo-dialogo.png" alt="Diálogo Butantã" title="Diálogo Butantã">
+    </div>
+    <nav class="nav">
+      <a href="#decorados">Decorados</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#lazer">Lazer</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <a href="#agendar" class="cta-header">Agende Sua Visita</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="carousel-container">
+      <div class="carousel-wrapper" id="carouselHero">
+        <div class="carousel-slide">
+          <div class="carousel-slide-content">Fachada Premium Noturna</div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-slide-content">Hall de Entrada Elegante</div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-slide-content">Área Externa Sofisticada</div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-slide-content">Academia de Alto Padrão</div>
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1>Você sabia que ficou mais fácil morar ao lado de <span class="highlight">Pinheiros</span> e da <span class="highlight">Av. Faria Lima?</span></h1>
+
+      <h2>O Butantã é o bairro estratégico que se conecta diretamente às regiões mais cobiçadas de São Paulo. Conheça o Boulevard Butantã: apartamentos de 80m² a 134m² (2, 3 e 4 dormitórios com suítes) a apenas 240 passos do Metrô e ao lado da USP.</h2>
+
+      <div class="hero-price-tag">
+        Unidades a partir de
+        <strong>R$ 998 MIL</strong>
+      </div>
+
+      <div class="hero-btns">
+        <a href="https://wa.me/5511960998000?text=Olá%20Siqueira%20Campos,%20quero%20informações%20sobre%20o%20Diálogo%20Butantã.%20Boulevard%20Butantã." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+        <a href="#decorados" class="btn btn-primary">Ver Decorados</a>
+        <a href="#agendar" class="btn btn-secondary">Agendar Visita</a>
+      </div>
+
+      <div class="hero-signature">
+        <strong>Atendimento Exclusivo</strong>
+        Siqueira Campos Imóveis<br>
+        <span class="creci">CRECI-SP 92522-F</span>
+        <span class="phone">(11) 96099-8000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DECORADOS -->
+  <section id="decorados">
+    <div class="section-header">
+      <h1>Conheça os <span class="highlight">Decorados</span></h1>
+      <p>Visite nossos apartamentos totalmente decorados e viva a experiência de como será morar no Boulevard Butantã. Cada ambiente foi cuidadosamente projetado para oferecer conforto, sofisticação e funcionalidade.</p>
+    </div>
+
+    <div class="decorados-grid">
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="BOULEVAR_DECORADO_134_SALA_COM_VARANDA_compactada_.jpg" alt="Sala com Varanda - Boulevard Butantã" loading="lazy" width="500" height="350">
+          <span class="card-badge">Sala Premium</span>
+        </div>
+        <div class="card-content">
+          <h3>Sala com Varanda</h3>
+          <p>Espaço amplo e luminoso com integração perfeita entre sala e varanda gourmet. Acabamento luxuoso e vista privilegiada.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> 134m²</div>
+            <div class="spec"><span class="spec-dot"></span> 4 Dorm</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="BOULEVAR_DECORADO_134_SALA_INTEGRADA_COZINHA_compactado_.jpg" alt="Sala Integrada à Cozinha - Boulevard Butantã" loading="lazy" width="500" height="350">
+          <span class="card-badge">Integração</span>
+        </div>
+        <div class="card-content">
+          <h3>Sala Integrada</h3>
+          <p>Design moderno com cozinha integrada à sala. Bancada central e eletrodomésticos premium. Ambiente social perfeito.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> 134m²</div>
+            <div class="spec"><span class="spec-dot"></span> Gourmet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="vertice_entrada_da_sala_1.jpg" alt="Entrada da Sala - Vértice" loading="lazy" width="500" height="350">
+          <span class="card-badge">Entrada</span>
+        </div>
+        <div class="card-content">
+          <h3>Entrada Sofisticada</h3>
+          <p>Acesso elegante e acolhedor. Acabamento em madeira nobre e iluminação arquitetônica. Primeira impressão de luxo.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Varanda</div>
+            <div class="spec"><span class="spec-dot"></span> Suite</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="vertice_sala.jpg" alt="Sala de Estar - Vértice" loading="lazy" width="500" height="350">
+          <span class="card-badge">Estar</span>
+        </div>
+        <div class="card-content">
+          <h3>Sala de Estar</h3>
+          <p>Ambiente aconchegante com pé-direito elevado. Acabamento premium em madeira e iluminação cênica sofisticada.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Espelho</div>
+            <div class="spec"><span class="spec-dot"></span> Luz LED</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="vertice_suite_dormitorio.jpg" alt="Suíte Principal - Vértice" loading="lazy" width="500" height="350">
+          <span class="card-badge">Suite Master</span>
+        </div>
+        <div class="card-content">
+          <h3>Suíte Master</h3>
+          <p>Espaço íntimo e refinado com iluminação ambiente. Closet planejado e banheiro conectado com acabamento em madeira.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Closet</div>
+            <div class="spec"><span class="spec-dot"></span> Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="vertice_dormitorio_suite.jpg" alt="Dormitório Suite - Vértice" loading="lazy" width="500" height="350">
+          <span class="card-badge">Dormitório</span>
+        </div>
+        <div class="card-content">
+          <h3>Dormitório Secundário</h3>
+          <p>Quarto espaçoso com acabamento sofisticado. Suite completa com banheiro e iluminação natural privilegiada.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Suite</div>
+            <div class="spec"><span class="spec-dot"></span> Amplo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="suite_ampliada_com_varanda_83m².webp" alt="Suite Ampliada com Varanda 83m²" loading="lazy" width="500" height="350">
+          <span class="card-badge">83m²</span>
+        </div>
+        <div class="card-content">
+          <h3>Suite com Varanda</h3>
+          <p>Unidade compacta e sofisticada. Suite ampla e varanda integrada. Ideal para casais ou single premium.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> 83m²</div>
+            <div class="spec"><span class="spec-dot"></span> Varanda</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="suite_com_ventilação_boulevar.webp" alt="Suite com Ventilação - Boulevard" loading="lazy" width="500" height="350">
+          <span class="card-badge">Ventilação</span>
+        </div>
+        <div class="card-content">
+          <h3>Suite Ventilada</h3>
+          <p>Design inteligente com circulação de ar natural. Suite com banheiro de vidro espelhado. Conforto máximo.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Premium</div>
+            <div class="spec"><span class="spec-dot"></span> Conforto</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-decorado">
+        <div class="card-img">
+          <img src="vertice_suite_dormitorio.jpg" alt="Banheiro Premium - Acabamento Luxo" loading="lazy" width="500" height="350">
+          <span class="card-badge">Banheiro</span>
+        </div>
+        <div class="card-content">
+          <h3>Banheiro Premium</h3>
+          <p>Banheiro de luxo com acabamento refinado. Espelho com iluminação LED, bancada em granito e louças sofisticadas.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-dot"></span> Granito</div>
+            <div class="spec"><span class="spec-dot"></span> Premium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA AGENDAR VISITA -->
+    <div class="cta-section" id="agendar">
+      <h2>Agende Sua <span class="highlight">Visita Agora</span></h2>
+      <p>Tenha acesso imediato ao decorado e viva a experiência de como será seu novo apartamento. Conheça pessoalmente a qualidade dos acabamentos, a luminosidade natural e o conforto que só o Boulevard Butantã oferece.</p>
+      
+      <div class="cta-buttons">
+        <a href="https://wa.me/5511960998000?text=Olá%20Siqueira%20Campos,%20gostaria%20de%20agendar%20uma%20visita%20ao%20decorado%20do%20Diálogo%20Butantã." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Agendar no WhatsApp</a>
+        <a href="tel:+5511960998000" class="btn btn-secondary">Ligar Agora</a>
+      </div>
+    </div>
+
+    <!-- EXPERIÊNCIA -->
+    <div class="experiencia-section">
+      <h3>Sua Experiência no Decorado</h3>
+      <p>Ao visitar nossos apartamentos, você poderá vivenciar cada detalhe de seu novo lar e acompanhar a obra em andamento.</p>
+      
+      <div class="experiencia-list">
+        <div class="exp-item">
+          <strong>✓ Acesso Imediato</strong>
+          <p>Agende a visita conforme sua disponibilidade e conheça pessoalmente os ambientes totalmente decorados.</p>
+        </div>
+        <div class="exp-item">
+          <strong>✓ Acabamentos Reais</strong>
+          <p>Visualize a qualidade dos materiais, a luminosidade natural e a distribuição dos espaços em tempo real.</p>
+        </div>
+        <div class="exp-item">
+          <strong>✓ Consultoria Exclusiva</strong>
+          <p>Siqueira Campos o acompanhará explicando cada detalhe e respondendo todas as suas dúvidas.</p>
+        </div>
+        <div class="exp-item">
+          <strong>✓ Acesso à Obra</strong>
+          <p>Visite também o canteiro de obras e acompanhe o progresso da construção em tempo real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const carousel = document.getElementById('carouselHero');
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    setInterval(nextSlide, 4000);
+
+    let touchStart = 0;
+    carousel.addEventListener('touchstart', (e) => { 
+      touchStart = e.touches[0].clientX; 
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      const touchEnd = e.changedTouches[0].clientX;
+      if (touchStart - touchEnd > 50) nextSlide();
+      if (touchEnd - touchStart > 50) {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+    }, { passive: true });
+
+    function toggleMenu() {
+      console.log('Menu mobile');
+    }
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click_whatsapp', { 'event_category': 'conversion' });
+        }
+      });
+    });
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WVX5BXJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-WVX5BXJS');
+  </script>
+
+</body>
+</html>
