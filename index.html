@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boulevard Butantã | Apartamentos 83–134m² | A 240 Passos do Metrô | Zona Oeste SP</title>
 <meta name="description" content="Boulevard Butantã — 83 a 134m² a 240 passos do Metrô Linha Amarela. Vizinho a Pinheiros e Faria Lima. A partir de R$ 989.000. Decorado aberto. Fale com Siqueira Campos!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +10,9 @@
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <meta name="theme-color" content="#0F172A">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="boulevard-butanta-fachada-noturna.webp" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WVX5BXJS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GT-WVX5BXJS');gtag('config','AW-17600073671');</script>
 <script type="application/ld+json">
@@ -2286,9 +2288,9 @@ footer{
 }
 
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init("user_placeholder"); // Será configurado com sua chave
+  window.addEventListener("load",function(){ if(window.emailjs) emailjs.init("user_placeholder"); }); // Será configurado com sua chave
 </script>
 
   <!-- Open Graph para Google Ads -->
@@ -2378,7 +2380,6 @@ footer{
 }
 </script>
 
-<link rel="preload" as="image" href="boulevard-butanta-fachada-noturna.webp" fetchpriority="high">
 </head>
 <body>
 
@@ -2599,7 +2600,7 @@ footer{
       <!-- MAPA COM MOLDURA -->
       <div class="loc-map-outer" style="padding:6px;background:linear-gradient(135deg,#C9A84C,#E8C870,#C9A84C,#A07830);border-radius:20px;box-shadow:0 8px 40px rgba(201,168,76,0.3);">
         <div class="loc-map-wrap">
-          <iframe
+          <iframe title="Mapa de localização do Boulevard Butantã"
             class="loc-iframe"
             data-src="https://maps.google.com/maps?q=Rua+Dr%C3%A1usio,+150,+Butant%C3%A3,+S%C3%A3o+Paulo&z=16&output=embed"
             allowfullscreen
@@ -2702,7 +2703,7 @@ footer{
           <div class="f-g"><label class="f-lbl">E-mail</label><input class="f-inp" id="fE" type="email" placeholder="seu@email.com"></div>
           <div class="f-g">
             <label class="f-lbl">Tipologia de Interesse</label>
-            <select class="f-inp" id="fI">
+            <select class="f-inp" id="fI" aria-label="Interesse">
               <option value="">Selecione...</option>
               <option>83m² — 1 Suíte</option>
               <option>106m² — 2 Suítes</option>
@@ -2714,7 +2715,7 @@ footer{
           </div>
           <div class="f-g">
             <label class="f-lbl">Como posso ajudar?</label>
-            <select class="f-inp" id="fA">
+            <select class="f-inp" id="fA" aria-label="Como podemos ajudar">
               <option value="">Selecione...</option>
               <option>Visitar a obra e o decorado</option>
               <option>Condições de pagamento direto</option>
@@ -2896,7 +2897,7 @@ function initHero(){
     d.innerHTML=`<img src="${h.s}" alt="${h.l}" loading="${i===0?'eager':'lazy'}" fetchpriority="${i===0?'high':'low'}" decoding="async">`;
     sl.insertBefore(d,sl.querySelector('.hero-ov'));
     const dot=document.createElement('button');
-    dot.className='hero-dot'+(i===0?' active':'');
+    dot.className='hero-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Ver foto '+(i+1));
     dot.onclick=()=>goH(i);
     dt.appendChild(dot);
   });
@@ -2936,7 +2937,7 @@ function initC(id,imgs){
     if(id==='d')el.onclick=()=>openModal(img.s);
     inn.appendChild(el);
     const dot=document.createElement('button');
-    dot.className='car-dot'+(i===0?' active':'');
+    dot.className='car-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Ver foto '+(i+1));
     dot.onclick=()=>goC(id,i);
     dots.appendChild(dot);
   });
@@ -3014,10 +3015,12 @@ function subLead(e){
   formData.append('Ajuda', aj || 'não informado');
   formData.append('Origem', 'Landing Page — dialogobutanta.com.br');
 
-  fetch('https://formsubmit.co/siqueiracampos.id@gmail.com', {
+  // envio pelo endpoint AJAX do FormSubmit; espera terminar (máx. 3s) antes de sair da página
+  const envioEmail = fetch('https://formsubmit.co/ajax/siqueiracampos.id@gmail.com', {
     method: 'POST',
-    body: formData
-  }).catch(err => console.log('Email enviado'));
+    body: formData,
+    keepalive: true
+  }).then(r => r.json()).then(j => console.log('FormSubmit:', j)).catch(err => console.log('FormSubmit erro:', err));
 
   // 2. DISPARO GOOGLE ADS CONVERSÃO + redirecionar para página de obrigado
   const msg=`Olá Siqueira Campos! Me chamo ${n}.${int?' Interesse: '+int+'.':''}${aj?' Preciso de: '+aj+'.':''} Tel: ${t}. Email: ${em||'não informado'}.`;
@@ -3027,15 +3030,17 @@ function subLead(e){
     window.location.href = 'obrigado.html?wa=' + encodeURIComponent(waUrl);
   }
 
-  if(typeof gtag !== 'undefined'){
-    gtag('event','conversion',{
-      'send_to':'AW-17600073671/s8LRCMmshOEcEMefr8hB',
-      'event_callback': irParaObrigado
-    });
-    setTimeout(irParaObrigado, 1000);
-  } else {
-    irParaObrigado();
-  }
+  Promise.race([envioEmail, new Promise(r => setTimeout(r, 3000))]).then(function(){
+    if(typeof gtag !== 'undefined'){
+      gtag('event','conversion',{
+        'send_to':'AW-17600073671/s8LRCMmshOEcEMefr8hB',
+        'event_callback': irParaObrigado
+      });
+      setTimeout(irParaObrigado, 1000);
+    } else {
+      irParaObrigado();
+    }
+  });
 
   // 4. MOSTRAR CONFIRMAÇÃO
   document.getElementById('lForm').style.display='none';
