@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boulevard Butantã | Apartamentos 83–134m² | A 240 Passos do Metrô | Zona Oeste SP</title>
-<meta name="description" content="Boulevard Butantã — 83 a 134m² a 240 passos do Metrô Linha Amarela. Vizinho a Pinheiros e Faria Lima. A partir de R$ 989.000. Decorado aberto. Fale com Siqueira Campos!">
+<meta name="description" content="Boulevard Butantã — 83 a 134m² a 240 passos do Metrô Linha Amarela. Vizinho a Pinheiros e Faria Lima. A partir de R$ 998.000. Decorado aberto. Fale com Siqueira Campos!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -20,12 +20,12 @@
   "@context": "https://schema.org",
   "@type": "RealEstateListing",
   "name": "Boulevard Butantã — Apartamentos de Alto Padrão",
-  "description": "Apartamentos de 83 a 134m² no Butantã, a 240 passos do Metrô Linha Amarela. Vizinho a Pinheiros e Faria Lima. A partir de R$ 989.000.",
+  "description": "Apartamentos de 83 a 134m² no Butantã, a 240 passos do Metrô Linha Amarela. Vizinho a Pinheiros e Faria Lima. A partir de R$ 998.000.",
   "url": "https://www.dialogobutanta.com.br",
   "image": "https://www.dialogobutanta.com.br/butanta/apartamento",
   "offers": {
     "@type": "Offer",
-    "price": "989000",
+    "price": "998000",
     "priceCurrency": "BRL",
     "availability": "https://schema.org/InStock"
   },
@@ -86,7 +86,7 @@
     "longitude": -46.7172
   },
   "openingHours": "Mo-Su 09:00-18:00",
-  "priceRange": "R$ 989.000 a R$ 2.000.000"
+  "priceRange": "R$ 998.000 a R$ 2.000.000"
 }
 </script>
 <style>
@@ -104,7 +104,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 /* ====== HEADER FIXO ====== */
 .hdr{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(15,23,42,0.97);backdrop-filter:blur(14px);
+  background:rgba(15,23,42,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(201,168,76,0.25);
   padding:0 32px;height:66px;
   display:flex;align-items:center;justify-content:space-between;
@@ -228,7 +228,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
   padding:18px 32px;border-radius:10px;font-size:15px;font-weight:700;
   text-decoration:none;display:inline-flex;align-items:center;gap:10px;
   border:2px solid rgba(255,255,255,0.6);transition:all 0.3s;
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   background:rgba(255,255,255,0.08);
   border-color:rgba(255,255,255,0.7);
 }
@@ -2046,7 +2046,7 @@ footer{
   position:fixed;
   bottom:0;left:0;right:0;
   background:rgba(15,23,42,0.97);
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border-top:2px solid rgba(201,168,76,0.4);
   z-index:9999;
   padding:16px 24px;
@@ -2332,6 +2332,18 @@ footer{
 .hero{background:#0F172A;}
 .hero-slide{transition:opacity 1s ease!important;}
 .hero-slide:not(.active){transition-delay:1s!important;}
+
+/* Texto do topo alternando a cada 2 fotos */
+.hero-txts{display:grid;}
+.hero-txt{grid-area:1/1;align-self:end;opacity:0;transition:opacity .8s ease;pointer-events:none;}
+.hero-txt.ht-on{opacity:1;pointer-events:auto;}
+.hero-cta{display:inline-block;margin-top:14px;background:var(--gold);color:var(--navy);font-weight:800;font-size:15px;padding:13px 26px;border-radius:30px;text-decoration:none;box-shadow:0 6px 22px rgba(201,168,76,.45);}
+.hero-cta:hover{background:var(--gold2);}
+@media (prefers-reduced-motion:reduce){.hero-txt{transition:none;}}
+
+/* iPhone/Android */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+a,button{-webkit-tap-highlight-color:rgba(201,168,76,.15);}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
@@ -2381,10 +2393,10 @@ footer{
       },
       "offers": {
         "@type": "Offer",
-        "price": "989000",
+        "price": "998000",
         "priceCurrency": "BRL",
         "availability": "https://schema.org/InStock",
-        "description": "Apartamentos a partir de R$ 989.000 — 83m², 106m² e 134m² com varanda gourmet"
+        "description": "Apartamentos a partir de R$ 998.000 — 83m², 106m² e 134m² com varanda gourmet"
       },
       "numberOfRooms": "2-3",
       "floorSize": {
@@ -2474,16 +2486,25 @@ footer{
 <div class="hero" id="heroSlider">
   <div class="hero-ov"></div>
   <div class="hero-cnt">
+  <div class="hero-txts">
+  <div class="hero-txt ht-on">
     
     <h1 class="hero-h1">A poucos minutos de Pinheiros e Faria Lima<br><em style="color:var(--gold2);font-style:italic;font-weight:800;text-shadow:0 2px 20px rgba(0,0,0,0.5);">com o valor por m² que você procurava.</em></h1>
     <p class="hero-sub">Boulevard Butantã — Apartamentos 83 | 106 a 134m² • A 240 passos do Metrô Linha Amarela • Butantã, São Paulo</p>
     <div class="hero-price">
       <span style="color:#E8C870;font-weight:600;font-size:clamp(14px,2vw,17px);">
-        A partir de <strong style="font-size:clamp(18px,2.5vw,22px);font-weight:800;">R$ 989.000</strong>
+        A partir de <strong style="font-size:clamp(18px,2.5vw,22px);font-weight:800;">R$ 998.000</strong>
         <span style="color:rgba(255,255,255,0.65);font-size:13px;display:block;margin-top:4px;letter-spacing:0.5px;font-weight:500;">com antecipação · consulte nosso especialista</span>
       </span>
     </div>
     
+  </div>
+  <div class="hero-txt" aria-hidden="true">
+    <div class="hero-h1" role="heading" aria-level="2">As melhores unidades<br><em style="color:var(--gold2);font-style:italic;font-weight:800;text-shadow:0 2px 20px rgba(0,0,0,0.5);">acabam rápido.</em></div>
+    <p class="hero-sub">Próximo a Pinheiros, Faria Lima e ao Metrô. Garanta o m² certo.</p>
+    <a class="hero-cta" href="#formulario" tabindex="-1">Conheça agora →</a>
+  </div>
+  </div>
   </div>
   <div class="hero-dots" id="heroDots"></div>
   <div class="hero-prog" id="heroProgress"></div>
@@ -2912,9 +2933,9 @@ const HERO=[
 ];
 const DEC=[
   {s:"DECORADO%20134%20M%C2%B2%20SALA%20COM%20INTEGRA%C3%87%C3%83O.webp",l:"Sala de Jantar integrada à Cozinha Gourmet"},
-  {s:"decorado%2083m%C2%B2%20terra%C3%A7o%20WEB.webp",l:"Varanda Gourmet com Churrasqueira"},
-  {s:"decorado%20suite%2083m%C2%B2%20WEB.webp",l:"Dormitório com Home Office"},
-  {s:"DECORADO%20LAVABO%20WEB%20.webp",l:"Lavabo em Mármore com Metais Dourados"},
+  {s:"decorado-varanda-gourmet-churrasqueira.webp",f:"decorado%2083m%C2%B2%20terra%C3%A7o%20WEB.webp",l:"Varanda Gourmet com Churrasqueira"},
+  {s:"decorado-dormitorio-home-office.webp",f:"decorado%20suite%2083m%C2%B2%20WEB.webp",l:"Dormitório com Home Office"},
+  {s:"decorado-lavabo-marmore.webp",f:"DECORADO%20LAVABO%20WEB%20.webp",l:"Lavabo em Mármore com Metais Dourados"},
   {s:"sala-de-estar-83m2.webp",l:"Sala de Estar — 83m²"},
   {s:"varanda-integrada-acabamento-premium-134m2.webp",l:"Varanda Integrada — 134m²"},
   {s:"cozinha-com-balcao-134m2.webp",l:"Cozinha com Balcão — 134m²"},
@@ -2959,7 +2980,11 @@ function initHero(){
   });
   setInterval(()=>goH((hI+1)%HERO.length),3000);
 }
+let hTroca=0;
 function goH(i){
+  hTroca++;
+  const txts=document.querySelectorAll('.hero-txt');
+  if(txts.length>1){const t=Math.floor(hTroca/2)%txts.length;txts.forEach((x,k)=>{x.classList.toggle('ht-on',k===t);x.setAttribute('aria-hidden',k===t?'false':'true');const a=x.querySelector('a');if(a)a.tabIndex=(k===t?0:-1);});}
   document.querySelectorAll('.hero-slide')[hI].classList.remove('active');
   document.querySelectorAll('.hero-dot')[hI].classList.remove('active');
   hI=i;
@@ -2988,8 +3013,9 @@ function initC(id,imgs){
 
   imgs.forEach((img,i)=>{
     const el=document.createElement('img');
-    el.src=img.s;el.alt=img.l;
-    el.loading=i===0?'eager':'lazy';
+    el.alt=img.l; el.decoding='async';
+    el.onerror=function(){ if(img.f && this.dataset.fb!=='1'){ this.dataset.fb='1'; this.src=img.f; } };
+    if(i<2){ el.src=img.s; el.loading=i===0?'eager':'lazy'; } else { el.dataset.src=img.s; }
     if(id==='d')el.onclick=()=>openModal(img.s);
     inn.appendChild(el);
     const dot=document.createElement('button');
@@ -3007,10 +3033,16 @@ function initC(id,imgs){
     if(Math.abs(diff)>40)mvC(id,diff>0?1:-1);
   },{passive:true});
 
-  setInterval(()=>mvC(id,1),id==='b'?4000:5500);
+  cars[id].vis=false;
+  if('IntersectionObserver' in window){ new IntersectionObserver(es=>{cars[id].vis=es[0].isIntersecting;},{rootMargin:'100px'}).observe(carEl); } else { cars[id].vis=true; }
+  setInterval(()=>{ if(cars[id].vis) mvC(id,1); },id==='b'?4000:5500);
+}
+function carregaC(id,i){
+  const ims=document.querySelectorAll('#'+id+'In img'); const n=ims.length;
+  [i,(i+1)%n,(i-1+n)%n].forEach(k=>{const im=ims[k]; if(im&&im.dataset.src){im.src=im.dataset.src; delete im.dataset.src;}});
 }
 function goC(id,i){
-  const c=cars[id];c.i=i;
+  const c=cars[id];c.i=i; carregaC(id,i);
   document.getElementById(id+'In').style.transform=`translateX(-${i*100}%)`;
   const lbl=document.getElementById(id+'Lbl');
   const counter=document.getElementById(id+'Counter');
@@ -3028,9 +3060,15 @@ function initLaz(){
     const c=document.createElement('div');
     c.className='laz-card';
     c.onclick=()=>openModal(item.s);
-    c.innerHTML=`<img src="${item.s}" alt="${item.l}" loading="lazy" decoding="async"><div class="laz-lbl">${item.l}</div>`;
+    c.innerHTML=`<img data-src="${item.s}" alt="${item.l}" decoding="async"><div class="laz-lbl">${item.l}</div>`;
     g.appendChild(c);
   });
+  const ims=g.querySelectorAll('img[data-src]');
+  const put=im=>{im.src=im.dataset.src; delete im.dataset.src;};
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ put(e.target); io.unobserve(e.target);} }),{rootMargin:'300px 400px'});
+    ims.forEach(im=>io.observe(im));
+  } else ims.forEach(put);
 }
 
 // ===== PLANTAS =====
