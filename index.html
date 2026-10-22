@@ -15,7 +15,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" as="image" href="boulevard-butanta-fachada-noturna.webp" imagesrcset="boulevard-butanta-fachada-noturna-800.webp 800w, boulevard-butanta-fachada-noturna.webp 1200w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="piscina-com-deck-lazer-de-alto-padrao.webp" imagesrcset="piscina-com-deck-lazer-de-alto-padrao-800.webp 800w, piscina-com-deck-lazer-de-alto-padrao.webp 1200w" imagesizes="100vw" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GT-WVX5BXJS');gtag('config','AW-17600073671',{'allow_enhanced_conversions':true});
@@ -249,7 +249,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--tex
 .hero-prog{
   position:absolute;bottom:0;left:0;z-index:4;height:3px;
   background:linear-gradient(90deg,var(--gold),var(--gold2));
-  animation:prog 3s linear infinite;
+  animation:prog 5s linear infinite;
 }
 @keyframes prog{from{width:0;}to{width:100%;}}
 @media(max-width:768px){
@@ -2616,6 +2616,9 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 .m-prev{left:12px}.m-next{right:12px}
 .m-lbl{color:#fff;font-size:15px;margin-top:14px;text-align:center;padding:0 20px}
 .m-hint{color:#C9A55C;font-size:13px;margin-top:6px}
+.m-pl{display:inline-block;background:#1A2B4C;color:#fff;border:1.5px solid #C9A55C;border-radius:20px;padding:7px 18px;font-size:16px;font-weight:600}
+.m-pld{display:block;color:#E9ECEF;font-size:13.5px;margin-top:8px}
+#modal #mImg{background:#fff;border-radius:8px}
 @media(max-width:600px){.m-nav{width:38px;height:38px;font-size:24px;background:rgba(255,255,255,.75)}.m-prev{left:6px}.m-next{right:6px}}
 .hero-txt .hero-h1,.hero-txt .hero-sub,.hero-price,.hero-150x,.hero-ast{text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 18px rgba(0,0,0,.35)}
 .hero-obra{background:rgba(10,16,28,.55)!important}
@@ -2628,6 +2631,15 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
  .hdr-cta.wa-btn svg{width:17px;height:17px}
  .hdr-burger{width:40px;height:40px;display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:5px;margin-left:4px;padding:0}
  .hdr-burger span{width:22px!important;margin:0!important}
+}
+/* capa no computador: texto inteiro, sem cortar */
+@media(min-width:769px){
+ .hero{height:auto!important;min-height:calc(100vh - 66px)!important;max-height:none!important;display:flex;flex-direction:column;justify-content:flex-end}
+ .hero-cnt{position:relative!important;inset:auto!important;padding:140px 32px 70px!important;width:100%}
+ .hero-txt{max-width:760px}
+ .hero-txt .hero-h1{font-size:clamp(2.1rem,3.3vw,3.1rem)!important;line-height:1.14!important}
+ .hero-txt .hero-sub{font-size:clamp(16px,1.3vw,19px)!important;margin:14px 0 10px!important}
+ .hero-cta.wa-btn{margin-top:16px!important}
 }
 /* capa no celular: texto inteiro, sem cortar */
 @media(max-width:768px){
@@ -2643,6 +2655,14 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
  .hero-dots{bottom:14px!important}
 }
 @media(max-width:360px){.hdr-bd img{height:22px!important}.hdr-cta.wa-btn{padding:0 10px!important;font-size:12px!important}}
+/* topo: caixas que trocam com as fotos */
+.hs-box{display:grid;margin-top:14px;max-width:560px}
+.hs-item{grid-area:1/1;opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.hs-item.on{opacity:1;transform:none;pointer-events:auto}
+.hs-txt{margin:0;color:#fff;font-size:17px;line-height:1.5;background:rgba(10,16,28,.55);border-left:3px solid #C9A55C;border-radius:0 8px 8px 0;padding:10px 14px;text-shadow:none!important}
+.hs-txt b{color:#F0DCA6;font-weight:700}
+.hs-item .hero-cta.wa-btn{margin-top:12px!important}
+@media(max-width:768px){.hs-txt{font-size:15.5px;padding:9px 12px}.hs-item .hero-cta.wa-btn{width:calc(100% - 64px)!important;font-size:14.5px!important;padding:13px 14px!important}}
 /* topo: status da obra */
 .hero-obra{margin:12px 0 0;color:#fff;font-size:13.5px;line-height:1.5;background:rgba(201,165,92,.18);border-left:3px solid #C9A55C;padding:8px 12px;border-radius:0 6px 6px 0;max-width:560px}
 .hero-obra b{color:#F0DCA6;font-weight:700}
@@ -2729,11 +2749,20 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
   <div class="hero-txt ht-on">
     <h1 class="hero-h1">A poucos minutos de Pinheiros e Faria Lima, <em>a apenas 240 passos do Metrô.</em></h1>
     <p class="hero-sub">Alto padrão com varanda gourmet e lazer completo para a sua família no Butantã.</p>
-    <div class="hero-price">Apartamentos de <b>83 m²</b> a partir de <strong>R$ 998.000</strong>*<small>Consulte também nossas opções exclusivas de <b>106 m²</b> e <b>134 m²</b>.</small></div>
-    <p class="hero-obra">🚧 <b>CONSTRUÇÃO EM OBRAS ACELERADAS:</b> agende sua visita e conheça o apartamento decorado de perto.</p>
-    <a class="hero-150x" href="#financiamento">ou em até <b>150x direto com a construtora</b> →</a>
-    <p class="hero-ast">*Condição com antecipação.</p>
-    <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20e%20as%20plantas%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Quero receber tabela e plantas no WhatsApp</a>
+    <div class="hs-box">
+      <div class="hs-item on" aria-hidden="false">
+        <p class="hs-txt">Apartamentos de <b>83 m²</b> com 2 dorms (1 suíte) e vaga, a partir de <b>R$ 998.000</b>.</p>
+        <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20e%20as%20plantas%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Quero receber tabela e plantas no WhatsApp</a>
+      </div>
+      <div class="hs-item" aria-hidden="true">
+        <p class="hs-txt">Confira as seguintes metragens: opções amplas de <b>106 a 134 m²</b> com suítes.</p>
+        <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20receber%20as%20plantas%20de%20106%20m%C2%B2%20e%20134%20m%C2%B2%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener" tabindex="-1"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Solicitar plantas de 106 e 134 m² no WhatsApp</a>
+      </div>
+      <div class="hs-item" aria-hidden="true">
+        <p class="hs-txt"><b>🚧 CONSTRUÇÃO EM OBRAS ACELERADAS:</b> agende sua visita e conheça o apartamento decorado de perto.</p>
+        <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20agendar%20uma%20visita%20ao%20decorado%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener" tabindex="-1"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Agendar visita ao decorado no WhatsApp</a>
+      </div>
+    </div>
   </div>
   </div>
   </div>
@@ -3017,9 +3046,9 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
   <div class="sec">
     <div class="form-wrap">
       <div class="tc" style="margin-bottom:32px;">
-        <span class="eyebrow-w">Prefere que eu te chame?</span>
-        <h2 class="h2w" style="margin-bottom:12px;">Deixe seu nome e WhatsApp</h2>
-        <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.7;">Siqueira Campos te chama em minutos com tabela, plantas e condições.</p>
+        <span class="eyebrow-w">Tabela e plantas</span>
+        <h2 class="h2w" style="margin-bottom:12px;">Receba o material completo no seu WhatsApp e analise no seu tempo</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.7;max-width:560px;margin:0 auto;">Sem ligações inconvenientes. O especialista Siqueira Campos enviará a tabela de preços e as plantas diretamente no seu celular para você avaliar com calma.</p>
       </div>
       <div class="form-card">
         <form id="lForm" onsubmit="subLead(event)">
@@ -3027,11 +3056,11 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
             <div class="f-g"><label class="f-lbl" for="fN">Nome</label><input class="f-inp" id="fN" type="text" placeholder="Seu nome" required autocomplete="name"></div>
             <div class="f-g"><label class="f-lbl" for="fT">WhatsApp</label><input class="f-inp" id="fT" type="tel" placeholder="(11) 99999-9999" required autocomplete="tel"></div>
           </div>
-          <button type="submit" class="f-sub">Quero que me chamem no WhatsApp →</button>
+          <button type="submit" class="f-sub">Receber material por WhatsApp →</button>
         </form>
         <div class="form-ok" id="formOk">
           <h3>✅ Recebemos seu contato!</h3>
-          <p>Siqueira Campos entrará em contato pelo WhatsApp em breve para confirmar sua visita.<br><br><em>Tudo que começa certo, termina certo!</em></p>
+          <p>Em breve Siqueira Campos enviará a tabela e as plantas no seu WhatsApp para você avaliar com calma.<br><br><em>Tudo que começa certo, termina certo!</em></p>
         </div>
       </div>
     </div>
@@ -3118,12 +3147,9 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 <script>
 // ===== DADOS =====
 const HERO=[
-  {s:"boulevard-butanta-fachada-noturna.webp",l:"Boulevard Butantã — Fachada Noturna"},
-  {s:"DECORADO%20134%20M%C2%B2%20SALA%20COM%20INTEGRA%C3%87%C3%83O.webp",l:"Decorado — Sala de jantar integrada à cozinha gourmet"},
-  {s:"hall-social-sofisticacao-desde-a-entrada.webp",l:"Hall Social — Sofisticação desde a entrada"},
-  {s:"piscina-com-deck-lazer-de-alto-padrao.webp",l:"Piscina com Deck — Lazer de alto padrão"},
-  {s:"academia-vista-panoramica-da-cidade.webp",l:"Academia — Vista panorâmica da cidade"},
-  {s:"varanda-integrada-acabamento-premium-134m2.webp",l:"Varanda Integrada — Acabamento premium 134m²"},
+  {s:"piscina-com-deck-lazer-de-alto-padrao.webp",m:"piscina-com-deck-lazer-de-alto-padrao-800.webp",l:"Piscina com Deck — Lazer de alto padrão"},
+  {s:"boulevard-butanta-fachada-noturna.webp",m:"boulevard-butanta-fachada-noturna-800.webp",l:"Boulevard Butantã — Fachada"},
+  {s:"obra-boulevard-butanta-lancamento-imobiliario-metr.webp",l:"Obra do Boulevard Butantã em andamento"},
 ];
 const DEC=[
   {s:"DECORADO%20134%20M%C2%B2%20SALA%20COM%20INTEGRA%C3%87%C3%83O.webp",l:"Sala de Jantar integrada à Cozinha Gourmet"},
@@ -3147,6 +3173,7 @@ const BAIRROS=[
   {s:"usp-campus-butanta-polo-academico.webp",l:"USP Campus Butantã — Polo acadêmico"},
 ];
 const LAZ=[
+  {s:"piscina-com-deck-lazer-de-alto-padrao.webp",l:"Piscina com Palmeiras"},
   {s:"piscina-com-deck.webp",l:"Piscina com Deck"},
   {s:"churrasqueira-gourmet.webp",l:"Churrasqueira Gourmet"},
   {s:"espaco-convivencia.webp",l:"Espaço Convivência"},
@@ -3166,7 +3193,7 @@ function initHero(){
     const d=document.createElement('div');
     d.className='hero-slide'+(i===0?' active':'');
     d.innerHTML=i===0
-      ? `<img src="${h.s}" srcset="boulevard-butanta-fachada-noturna-800.webp 800w, ${h.s} 1200w" sizes="100vw" alt="${h.l}" loading="eager" fetchpriority="high">`
+      ? `<img src="${h.s}" srcset="${h.m} 800w, ${h.s} 1200w" sizes="100vw" alt="${h.l}" loading="eager" fetchpriority="high">`
       : `<img data-src="${h.s}" alt="${h.l}" fetchpriority="low" decoding="async">`;
     sl.insertBefore(d,sl.querySelector('.hero-ov'));
     const dot=document.createElement('button');
@@ -3174,7 +3201,7 @@ function initHero(){
     dot.onclick=()=>goH(i);
     dt.appendChild(dot);
   });
-  setInterval(()=>goH((hI+1)%HERO.length),3000);
+  setInterval(()=>goH((hI+1)%HERO.length),5000);
 }
 function carregaH(k){
   const s=document.querySelectorAll('.hero-slide img'); const im=s[k%s.length];
@@ -3191,11 +3218,12 @@ function goH(i){
   document.querySelectorAll('.hero-slide')[hI].classList.remove('active');
   document.querySelectorAll('.hero-dot')[hI].classList.remove('active');
   hI=i;
+  document.querySelectorAll('.hs-item').forEach((x,k)=>{x.classList.toggle('on',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');const a=x.querySelector('a');if(a)a.tabIndex=(k===i?0:-1);});
   document.querySelectorAll('.hero-slide')[hI].classList.add('active');
   document.querySelectorAll('.hero-dot')[hI].classList.add('active');
   const p=document.getElementById('heroProgress');
   p.style.animation='none';p.offsetHeight;
-  p.style.animation='prog 3s linear infinite';
+  p.style.animation='prog 5s linear infinite';
 }
 
 // ===== CARROSSEIS =====
@@ -3393,7 +3421,7 @@ function galGrupos(){
   try{g.push(DEC.map(function(x){return{s:x.s,l:x.l}}));}catch(e){}
   try{g.push(BAIRROS.map(function(x){return{s:x.s,l:x.l}}));}catch(e){}
   g.push(Array.from(document.querySelectorAll('.obra-grid img')).map(function(im){return{s:im.getAttribute('src'),l:'Obra em andamento'}}));
-  g.push(Array.from(document.querySelectorAll('.tab-p > img')).map(function(im){return{s:im.getAttribute('src'),l:im.alt}}));
+  g.push(Array.from(document.querySelectorAll('.tab-p')).map(function(tp){var im=tp.querySelector('img'),tg=tp.querySelector('.pl-tag'),inf=tp.querySelector('.planta-info');return im?{s:im.getAttribute('src'),l:(tg?tg.textContent:im.alt),p:1,d:(inf?inf.textContent.replace(/^\s*\S+\s*[—-]\s*/,'').trim():'')}:null;}).filter(Boolean));
   return g;
 }
 function galNome(s){try{return decodeURIComponent(String(s).split('/').pop());}catch(e){return String(s).split('/').pop();}}
@@ -3408,7 +3436,8 @@ function galMostra(){
   var it=GAL.l[GAL.i],im=document.getElementById('mImg');
   im.style.transform='';im.src=it.s;im.alt=it.l||'';
   var c=document.getElementById('mCont'),l=document.getElementById('mLbl'),multi=GAL.l.length>1;
-  c.textContent=multi?(GAL.i+1)+' / '+GAL.l.length:'';l.textContent=it.l||'';
+  c.textContent=multi?(GAL.i+1)+' / '+GAL.l.length:'';
+  if(it.p){l.innerHTML='<span class="m-pl">'+it.l+'</span>'+(it.d?'<span class="m-pld">'+it.d+'</span>':'');}else{l.textContent=it.l||'';}
   document.querySelectorAll('.m-nav').forEach(function(b){b.style.display=multi?'flex':'none'});
   document.getElementById('mHint').style.display=multi?'block':'none';
 }
