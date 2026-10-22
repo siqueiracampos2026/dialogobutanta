@@ -2683,20 +2683,18 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 .form-bg{background:#F4F6F8!important}
 .form-card{border:2px solid #C9A55C!important;border-radius:14px!important;background:#fff!important;box-shadow:0 10px 30px rgba(26,43,76,.08)!important}
 @media(min-width:900px){#formulario .h2w{max-width:760px;margin-left:auto;margin-right:auto;font-size:clamp(1.7rem,2.4vw,2.3rem)!important}}
-/* plantas no computador: metragens à esquerda, planta à direita */
-@media(min-width:900px){
- #plantas .sec{display:grid!important;grid-template-columns:300px minmax(0,1fr);column-gap:32px;align-items:start;max-width:1120px!important}
- #plantas .sec>.eyebrow,#plantas .sec>h2{grid-column:1/-1}
- #plantas .sec>h2{font-size:clamp(1.6rem,2.4vw,2.2rem)!important;margin-bottom:28px!important}
- #plantas .tabs{display:none!important}
- #plantas .plant-cards-row{grid-column:1;grid-row:3;display:flex!important;flex-direction:column;gap:10px;max-width:none!important;margin:0!important;position:sticky;top:120px}
- #plantas .plant-card-mini{width:100%!important;max-width:none!important;margin:0!important;text-align:left;padding:14px 18px!important;display:grid;grid-template-columns:86px 1fr;align-items:center;column-gap:10px}
- #plantas .plant-card-mini .pcm-area{font-size:22px!important;margin:0!important}
- #plantas .plant-card-mini .pcm-desc{font-size:13px!important;line-height:1.45}
- #plantas .plant-card-mini.pcm-ativo{border:2px solid #C9A55C!important;box-shadow:0 6px 18px rgba(26,43,76,.10)!important}
- #plantas .tab-p{grid-column:2;grid-row:3}
- #plantas .tab-p .pl-imgwrap{max-width:none}
-}
+/* plantas: botões de metragem compactos e centralizados, planta centralizada embaixo */
+#plantas .sec>h2{font-size:clamp(1.5rem,2.4vw,2.2rem)!important;margin-bottom:22px!important}
+#plantas .plant-cards-row{display:flex!important;flex-wrap:wrap;justify-content:center;gap:10px;max-width:860px!important;margin:0 auto 22px!important;padding:0!important;overflow:visible!important}
+#plantas .plant-card-mini{flex:0 0 auto!important;width:auto!important;min-width:150px;max-width:none!important;margin:0!important;padding:10px 16px!important;text-align:center;border-radius:10px!important}
+#plantas .plant-card-mini .pcm-area{font-size:19px!important;margin:0 0 2px!important;line-height:1.2}
+#plantas .plant-card-mini .pcm-desc{font-size:12px!important;line-height:1.35}
+#plantas .plant-card-mini .pcm-desc span{display:none}
+#plantas .plant-card-mini.pcm-ativo{border:2px solid #C9A55C!important;box-shadow:0 4px 14px rgba(26,43,76,.10)!important}
+#plantas .tabs{display:none!important}
+#plantas .tab-p{max-width:760px;margin:0 auto}
+@media(min-width:769px){html body #plantas .plant-cards-row{max-width:1000px!important;flex-wrap:nowrap}html body #plantas .plant-card-mini{flex:1 1 0!important;min-width:0}}
+@media(max-width:768px){html body #plantas .plant-cards-row{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:8px!important}html body #plantas .plant-card-mini{min-width:0!important;width:auto!important;flex:0 0 calc(50% - 4px)!important;padding:9px 8px!important}}
 /* plantas: ancoradas e arrastáveis */
 .pl-imgwrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;touch-action:pan-y}
 .pl-imgwrap img{width:100%!important;height:100%!important;object-fit:contain;padding:44px 8px 8px;will-change:transform;user-select:none;-webkit-user-drag:none}
@@ -3015,16 +3013,6 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
       </div>
 
     </div>
-  </div>
-</div>
-
-<!-- VAGAS E MOBILIDADE -->
-<div class="vagas-sec">
-  <div class="sec tc">
-    <span class="eyebrow">Vagas e mobilidade</span>
-    <h2 class="h2" style="margin-bottom:14px;">Conforto para o seu carro,<br>liberdade para a sua rotina.</h2>
-    <p class="vagas-txt">Todas as unidades do Boulevard Butantã contam com vaga de garagem. E, com o metrô a 240 passos, você escolhe quando usar o carro.</p>
-    <a class="btn-planta-wa wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20saber%20a%20quantidade%20de%20vagas%20por%20planta%20no%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Consultar vagas por planta</a>
   </div>
 </div>
 
