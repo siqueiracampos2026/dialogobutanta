@@ -2663,6 +2663,10 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 .hero-limpo .hero-ov{opacity:0}
 .hero-limpo .hero-sub,.hero-limpo .hs-box{opacity:0;pointer-events:none}
 .hero-limpo .hero-h1{text-shadow:0 2px 6px rgba(0,0,0,.6),0 0 24px rgba(0,0,0,.45)!important}
+.h1-duo{display:grid}
+.h1-duo>span{grid-area:1/1;transition:opacity .7s ease}
+.h1-duo .h1b{opacity:0}
+.t2 .h1-duo .h1a{opacity:0}.t2 .h1-duo .h1b{opacity:1}
 /* topo: caixas que trocam com as fotos */
 .hs-box{display:grid;margin-top:14px;max-width:560px}
 .hs-item{grid-area:1/1;opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
@@ -2771,7 +2775,7 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
   <div class="hero-txts">
   <div class="hero-txt ht-on">
     <p class="hero-local">📍 A 240 passos do Metrô · Ao lado de Pinheiros e Faria Lima</p>
-    <h1 class="hero-h1">Agende sua visita: <em>juntos vamos conhecer a obra do seu apartamento.</em></h1>
+    <h1 class="hero-h1 h1-duo"><span class="h1a">Morar ao lado de Pinheiros e da Av. Faria Lima, <em>pagando muito menos.</em></span><span class="h1b" aria-hidden="true">Agende sua visita: <em>juntos vamos conhecer a obra do seu futuro apartamento.</em></span></h1>
     <p class="hero-sub">Alto padrão com varanda gourmet e lazer completo para a sua família no Butantã.</p>
     <div class="hs-box">
       <div class="hs-item on" aria-hidden="false">
@@ -3242,6 +3246,7 @@ function goH(i){
   document.querySelectorAll('.hero-slide')[hI].classList.remove('active');
   document.querySelectorAll('.hero-dot')[hI].classList.remove('active');
   if(i===0){ var hs=document.getElementById('heroSlider'); window.hVolta=(window.hVolta||0)+1; hs.classList.toggle('hero-limpo', window.hVolta%2===1); }
+  document.getElementById('heroSlider').classList.toggle('t2', i===2);
   hI=i;
   document.querySelectorAll('.hs-item').forEach((x,k)=>{x.classList.toggle('on',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');const a=x.querySelector('a');if(a)a.tabIndex=(k===i?0:-1);});
   document.querySelectorAll('.hero-slide')[hI].classList.add('active');
