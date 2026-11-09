@@ -2751,6 +2751,11 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 @keyframes finSeta{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
 @keyframes finBox{0%,100%{box-shadow:inset 3px 0 0 #C9A55C,0 0 0 0 rgba(201,165,92,0)}50%{box-shadow:inset 3px 0 0 #F0DCA6,0 0 0 4px rgba(201,165,92,.25)}}
 @media(prefers-reduced-motion:reduce){.hs-fin,.hs-fin-dot,.hs-fin-seta,.hs-click{animation:none}}
+</style><style id="ajuste-acessibilidade">
+.eyebrow,.eyebrow-w,footer p,footer a.footer-lgpd-link{color:#555d68!important}
+#contato .sig-card [style*="rgba(15,30,56,0.4)"]{color:rgba(15,30,56,.68)!important}
+#contato .sig-wa.sig-big{color:#0F1E38!important}#contato .sig-wa.sig-big svg path:first-child{fill:#0F1E38!important}
+.gar3-card h3{font-size:17px!important;font-weight:700!important;color:var(--navy);margin-bottom:10px!important}
 </style></head>
 <body>
 
@@ -3054,17 +3059,17 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
     <div class="gar3-grid">
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9,12 11,14 15,10"/></svg></div>
-        <h4>Entrega Garantida</h4>
+        <h3>Entrega Garantida</h3>
         <p>Obra em andamento com data de entrega confirmada. Visite o canteiro e acompanhe cada etapa.</p>
       </div>
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-        <h4>Construtora Diálogo</h4>
+        <h3>Construtora Diálogo</h3>
         <p>Anos de mercado em São Paulo e histórico comprovado de entregas no prazo.</p>
       </div>
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <h4>Condições Especiais</h4>
+        <h3>Condições Especiais</h3>
         <p>Pagamento direto com a construtora, entrada facilitada, FGTS e financiamento.</p>
       </div>
     </div>
@@ -3701,5 +3706,5 @@ document.querySelectorAll('a[href="#politica"]').forEach(a=>{
   });
 })();
 </script>
-<script>document.querySelectorAll('.hs-click').forEach(function(p){p.addEventListener('click',function(e){if(e.target.closest('a'))return;var a=p.querySelector('a.hs-fin');if(a)a.click();});});</script></body>
+<script>document.querySelectorAll('.hs-click').forEach(function(p){p.addEventListener('click',function(e){if(e.target.closest('a'))return;var a=p.querySelector('a.hs-fin');if(a)a.click();});});</script><script>(function(){function s(){document.querySelectorAll('.hs-item').forEach(function(it){var h=it.getAttribute('aria-hidden')==='true';it.querySelectorAll('a,button').forEach(function(a){if(h)a.setAttribute('tabindex','-1');else a.removeAttribute('tabindex')})})}s();var mo=new MutationObserver(s);document.querySelectorAll('.hs-item').forEach(function(it){mo.observe(it,{attributes:true,attributeFilter:['aria-hidden']})})})();</script></body>
 </html>
