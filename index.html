@@ -2718,7 +2718,29 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
  .hero-cnt{max-width:1080px;margin:0 auto;left:0;right:0}
 }
 </style>
-</head>
+<style id="ajuste-celular-topo">@media(max-width:768px){
+.hdr{padding:0 20px!important;justify-content:space-between!important}
+.hdr-logo{margin:0!important}
+.hdr-cta{margin:0 auto!important}
+.hdr-burger{margin:0!important}
+.hero{min-height:calc(100svh - 106px)!important}
+.hero-sub{font-size:14px!important;line-height:1.4!important;margin-bottom:10px!important}
+.hero-cnt{padding-bottom:34px!important}
+.hero-local{font-size:12px!important;padding:6px 12px!important;margin-bottom:10px!important}
+.hero-h1{font-size:1.7rem!important;margin-bottom:12px!important}
+.hs-txt{font-size:15px!important;line-height:1.45!important}
+.hs-box{padding:0!important}
+}</style>
+<style id="ajuste-localizacao">@media(min-width:900px){#localizacao .loc-faq-grid{max-width:1080px!important;margin:0 auto!important;grid-template-columns:1fr 1fr!important;gap:28px!important;align-items:stretch!important}#localizacao .loc-map-outer{display:flex!important}#localizacao .loc-map-wrap{flex:1;height:auto!important;min-height:100%!important}#localizacao .loc-iframe{height:100%!important}}</style><style id="ajuste-garantias">
+.gar3-bg .sec{padding-bottom:56px!important}
+.gar3-bg+.obra-bg{background:#F6F7F9!important}
+.gar3-bg+.obra-bg .sec{padding-top:56px!important}
+.gar3-grid{max-width:1000px;margin:0 auto;gap:24px!important;align-items:stretch}
+.gar3-card{display:flex!important;flex-direction:column;align-items:center;padding:30px 26px 28px!important;border-top:3px solid #C9A55C!important;border-radius:14px!important;box-shadow:0 6px 24px rgba(15,30,56,.06)!important}
+.gar3-card h4{font-size:17px!important;margin-bottom:10px!important}
+.gar3-card p{font-size:14.5px!important;line-height:1.6!important;color:#4a5568!important;max-width:260px;margin:0 auto!important}
+@media(max-width:768px){.gar3-grid{gap:14px!important}.gar3-card{padding:24px 20px!important}.gar3-bg .sec{padding-bottom:32px!important}.gar3-bg+.obra-bg .sec{padding-top:36px!important}}
+</style><style id="ajuste-selo">.selo-wrap{position:relative}.selo-wa{position:absolute;top:0;bottom:0;left:40%;right:0;border-radius:0 10px 10px 0;transition:background .2s}.selo-wa:hover{background:rgba(201,165,92,.08)}</style><style id="ajuste-slides">.h1-duo .h1c{opacity:0}.t1 .h1-duo .h1a{opacity:0}.t1 .h1-duo .h1c{opacity:1}.hs-nota{display:block;font-size:11px;opacity:.75;margin-top:4px}</style><style id="ajuste-tarjas">.hs-item{display:flex!important;flex-direction:column}.hs-item .hs-txt{flex:1}.hs-fin{color:#F0DCA6;opacity:1!important;font-weight:600}.hero-cta.wa-btn{display:flex!important;align-items:center;gap:10px}@media(max-width:768px){.hero-cta.wa-btn{max-width:360px}}@media(min-width:769px){.hero-cta.wa-btn{width:100%!important;max-width:100%!important;justify-content:center}}</style></head>
 <body>
 
 <!-- HEADER FIXO -->
@@ -2772,21 +2794,19 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
   <div class="hero-cnt">
   <div class="hero-txts">
   <div class="hero-txt ht-on">
-    <p class="hero-local">📍 A 240 passos do Metrô · Ao lado de Pinheiros e Faria Lima</p>
-    <h1 class="hero-h1 h1-duo"><span class="h1a">Morar ao lado de Pinheiros e da Av. Faria Lima, <em>pagando muito menos.</em></span><span class="h1b" aria-hidden="true">Agende sua visita: <em>juntos vamos conhecer a obra do seu futuro apartamento.</em></span></h1>
-    <p class="hero-sub">Alto padrão com varanda gourmet e lazer completo para a sua família no Butantã.</p>
+    <h1 class="hero-h1 h1-duo"><span class="h1a">Morar ao lado de Pinheiros e da Av. Faria Lima, <em>pagando muito menos.</em></span><span class="h1c" aria-hidden="true">Investimento ou apoio ao lado da USP: <em>o Boulevard Butantã é a escolha ideal.</em></span><span class="h1b" aria-hidden="true">Agende sua visita: <em>juntos vamos conhecer a obra do seu futuro apartamento.</em></span></h1>
     <div class="hs-box">
       <div class="hs-item on" aria-hidden="false">
-        <p class="hs-txt">Apartamentos de <b>83 m²</b> com 2 dorms (1 suíte) e vaga, a partir de <b>R$ 998.000</b>.</p>
+        <p class="hs-txt">Apartamentos de <b>83 m²</b> com 2 dorms (1 suíte) e vaga, a partir de <b>R$ 998.000</b>.<span class="hs-nota hs-fin">Financiamento direto com a construtora e taxa diferenciada (sujeito à análise de crédito).</span></p>
         <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20e%20as%20plantas%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Quero receber tabela e plantas no WhatsApp</a>
       </div>
       <div class="hs-item" aria-hidden="true">
-        <p class="hs-txt">Confira as seguintes metragens: opções amplas de <b>106 a 134 m²</b> com suítes.</p>
+        <p class="hs-txt">Plantas amplas de <b>106 a 134 m²</b> com suítes e varanda gourmet.<span class="hs-nota hs-fin">Financiamento direto com a construtora e taxa diferenciada (sujeito à análise de crédito).</span></p>
         <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20receber%20as%20plantas%20de%20106%20m%C2%B2%20e%20134%20m%C2%B2%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener" tabindex="-1"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Solicitar plantas de 106 e 134 m² no WhatsApp</a>
       </div>
       <div class="hs-item" aria-hidden="true">
-        <p class="hs-txt"><b>🚧 CONSTRUÇÃO EM OBRAS ACELERADAS:</b> agende sua visita e conheça o apartamento decorado de perto.</p>
-        <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20agendar%20uma%20visita%20ao%20decorado%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener" tabindex="-1"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Agendar visita ao decorado no WhatsApp</a>
+        <p class="hs-txt"><b>Financiamento direto com a construtora</b>, com taxa diferenciada, entrada facilitada e FGTS.<span class="hs-nota">*Sujeito à análise de crédito.</span></p>
+        <a class="hero-cta wa-btn" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Quero%20saber%20do%20financiamento%20direto%20com%20a%20construtora%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener" tabindex="-1"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.388.627 4.63 1.72 6.576L2 30l7.618-1.693A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="currentColor"/><path d="M21.5 18.77c-.297-.148-1.754-.865-2.026-.964-.272-.099-.47-.148-.668.148-.198.297-.768.964-.941 1.163-.173.198-.347.223-.644.074-.297-.148-1.254-.462-2.388-1.474-.882-.787-1.477-1.758-1.651-2.055-.173-.297-.018-.457.13-.605.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.074-.149-.668-1.609-.915-2.204-.241-.579-.486-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.477s1.065 2.874 1.213 3.072c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.717 2.002-1.41.248-.692.248-1.285.173-1.409-.074-.124-.272-.198-.57-.347z" fill="#25D366"/></svg>Simular financiamento direto no WhatsApp</a>
       </div>
     </div>
   </div>
@@ -2964,7 +2984,6 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
       <span class="eyebrow">Localização privilegiada</span>
       <h2 class="h2">Rua Dráusio, 150 · no coração do Butantã</h2>
       <p class="loc-sub">Viver a apenas 240 passos do Metrô Butantã (Linha 4-Amarela) significa ter acesso rápido a Pinheiros, Av. Paulista e Faria Lima, sem precisar tirar o carro da garagem.</p>
-      <div class="end-row"><div><small>EMPREENDIMENTO</small>Rua Dráusio, 150 · São Paulo · SP</div><div><small>SHOWROOM</small>Rua Camargo, 34 · São Paulo · SP</div></div>
     </div>
 
     <!-- GRID: MAPA + FAQ LADO A LADO -->
@@ -3017,7 +3036,7 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 </div>
 
 <!-- GARANTIAS -->
-<div style="background:white;">
+<div class="gar3-bg" style="background:white;">
   <div class="sec tc">
     <span class="eyebrow">Segurança Total</span>
     <h2 class="h2" style="margin-bottom:36px;">Você está no caminho certo</h2>
@@ -3025,17 +3044,17 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9,12 11,14 15,10"/></svg></div>
         <h4>Entrega Garantida</h4>
-        <p>Obra em andamento com data confirmada. Acompanhe cada etapa pessoalmente visitando o canteiro.</p>
+        <p>Obra em andamento com data de entrega confirmada. Visite o canteiro e acompanhe cada etapa.</p>
       </div>
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
         <h4>Construtora Diálogo</h4>
-        <p>Anos de experiência no mercado imobiliário paulistano com histórico comprovado de entregas.</p>
+        <p>Anos de mercado em São Paulo e histórico comprovado de entregas no prazo.</p>
       </div>
       <div class="gar3-card">
         <div class="gar3-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
         <h4>Condições Especiais</h4>
-        <p>Pagamento direto com a construtora, entrada facilitada, FGTS e financiamento bancário.</p>
+        <p>Pagamento direto com a construtora, entrada facilitada, FGTS e financiamento.</p>
       </div>
     </div>
   </div>
@@ -3044,7 +3063,7 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 <!-- OBRA -->
 <div class="obra-bg">
   <div class="sec tc">
-    <span class="eyebrow-w">🏗️ Obra em Andamento</span>
+    <span class="eyebrow-w">Obra em Andamento</span>
     <h2 class="h2w" style="margin-bottom:12px;">Visite Seu Futuro Apartamento</h2>
     <p style="color:rgba(255,255,255,0.7);font-size:15px;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8;">✅ Acesso imediato • Decorado aberto • Unidades disponíveis para visita agendada</p>
     <div class="obra-grid">
@@ -3087,7 +3106,7 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 <div class="sig-bg" id="contato">
   <div class="sig-card">
     <div class="sig-av"><img loading="lazy" decoding="async" src="siqueira-campos-especialista-imoveis-zona-oeste-sp.webp" alt="Siqueira Campos Especialista Imóveis Zona Oeste SP"></div>
-    <a href="https://siqueiracamposoficial.com.br/" target="_blank" style="text-decoration:none;"><div class="sig-name" style="transition:color 0.2s;" onmouseover="this.style.color='#B8924A'" onmouseout="this.style.color=''">Siqueira Campos ↗</div></a>
+    <a href="https://www.siqueiracamposimoveis.com.br/" target="_blank" style="text-decoration:none;"><div class="sig-name" style="transition:color 0.2s;" onmouseover="this.style.color='#B8924A'" onmouseout="this.style.color=''">Siqueira Campos ↗</div></a>
     <div class="sig-role">Especialista em Empreendimentos • Zona Oeste de SP</div>
     <div style="font-size:11px;color:rgba(15,30,56,0.4);margin-top:-12px;margin-bottom:18px;letter-spacing:1px;">CRECI 92522-F</div>
     <blockquote class="sig-q">"Tudo que começa certo, termina certo. Há anos ajudo famílias a realizarem o sonho do imóvel ideal na Zona Oeste de SP — e o Boulevard Butantã reúne tudo que eu recomendaria para a minha própria família."</blockquote>
@@ -3098,8 +3117,8 @@ p,.faq-a,.hero-sub,.loc-sub,.vagas-txt,.gar3-card p,.sig-q,.planta-info,.fin-obs
 </div>
 
 <footer>
-  <div class="selo-wrap"><img src="selo-dialogo-siqueira-campos.webp" alt="Empreendimento Diálogo Engenharia · Siqueira Campos, corretor autorizado" width="1380" height="240" loading="lazy"></div>
-  <p style="color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;">CRECI: 92522-F &nbsp;·&nbsp; <a href="https://siqueiracamposoficial.com.br/" target="_blank" style="color:var(--gold);text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Siqueira Campos Investimento & Soluções Imobiliárias ↗</a></p>
+  <div class="selo-wrap"><img src="selo-dialogo-siqueira-campos.webp" alt="Empreendimento Diálogo Engenharia · Siqueira Campos, corretor autorizado" width="1380" height="240" loading="lazy"><a class="selo-wa" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%20Campos%21%20Vi%20o%20site%20do%20Boulevard%20Butant%C3%A3%20e%20quero%20receber%20tabela%20e%20plantas." target="_blank" rel="noopener" aria-label="Falar com Siqueira Campos no WhatsApp" title="Falar com Siqueira Campos no WhatsApp"></a></div>
+  <p style="color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;">CRECI: 92522-F &nbsp;·&nbsp; <a href="https://www.siqueiracamposimoveis.com.br/" target="_blank" style="color:var(--gold);text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Siqueira Campos Investimento & Soluções Imobiliárias ↗</a></p>
   <p>Imagens meramente ilustrativas. Valores e condições sujeitos a alteração sem aviso prévio. Consulte nosso time para condições atualizadas.</p>
   <p style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);">
     🔒 <a href="#politica" class="footer-lgpd-link">Política de Privacidade</a>
@@ -3234,7 +3253,7 @@ function goH(i){
   document.querySelectorAll('.hero-slide')[hI].classList.remove('active');
   document.querySelectorAll('.hero-dot')[hI].classList.remove('active');
   if(i===0){ var hs=document.getElementById('heroSlider'); window.hVolta=(window.hVolta||0)+1; hs.classList.toggle('hero-limpo', window.hVolta%2===1); }
-  document.getElementById('heroSlider').classList.toggle('t2', i===2);
+  document.getElementById('heroSlider').classList.toggle('t2', i===2);document.getElementById('heroSlider').classList.toggle('t1', i===1);
   hI=i;
   document.querySelectorAll('.hs-item').forEach((x,k)=>{x.classList.toggle('on',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');const a=x.querySelector('a');if(a)a.tabIndex=(k===i?0:-1);});
   document.querySelectorAll('.hero-slide')[hI].classList.add('active');
