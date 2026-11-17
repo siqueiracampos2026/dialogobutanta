@@ -3499,9 +3499,9 @@ function subLead(e){
 // Quando a conversão "Clique WhatsApp" for criada no Google Ads, colar o código dela aqui (ex.: 'AW-17600073671/XXXXXXX')
 var WPP_CONV='AW-17600073671/TXU6CM-xmI0dEMefr8hB';
 document.addEventListener('click',function(e){
-  var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me"],a[href^="tel:"]'):null;
+  var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"]'):null;
   if(!a||typeof gtag==='undefined')return;
-  gtag('event','clique_contato',{tipo:a.href.indexOf('tel:')===0?'telefone':'whatsapp'});
+  gtag('event','clique_contato',{tipo:'telefone'});
   if(WPP_CONV)gtag('event','conversion',{'send_to':WPP_CONV});
 },true);
 
@@ -3746,5 +3746,85 @@ document.querySelectorAll('a[href="#politica"]').forEach(a=>{
   });
 })();
 </script>
-<script>document.querySelectorAll('.hs-click').forEach(function(p){p.addEventListener('click',function(e){if(e.target.closest('a'))return;var a=p.querySelector('a.hs-fin');if(a)a.click();});});</script><script>(function(){function s(){document.querySelectorAll('.hs-item').forEach(function(it){var h=it.getAttribute('aria-hidden')==='true';it.querySelectorAll('a,button').forEach(function(a){if(h)a.setAttribute('tabindex','-1');else a.removeAttribute('tabindex')})})}s();var mo=new MutationObserver(s);document.querySelectorAll('.hs-item').forEach(function(it){mo.observe(it,{attributes:true,attributeFilter:['aria-hidden']})})})();</script></body>
+<script>document.querySelectorAll('.hs-click').forEach(function(p){p.addEventListener('click',function(e){if(e.target.closest('a'))return;var a=p.querySelector('a.hs-fin');if(a)a.click();});});</script><script>(function(){function s(){document.querySelectorAll('.hs-item').forEach(function(it){var h=it.getAttribute('aria-hidden')==='true';it.querySelectorAll('a,button').forEach(function(a){if(h)a.setAttribute('tabindex','-1');else a.removeAttribute('tabindex')})})}s();var mo=new MutationObserver(s);document.querySelectorAll('.hs-item').forEach(function(it){mo.observe(it,{attributes:true,attributeFilter:['aria-hidden']})})})();</script><style id="wcap-css">
+#wcap{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(9,18,36,.72);padding:16px}
+#wcap.on{display:flex}
+#wcap .bx{background:#fff;max-width:400px;width:100%;border-radius:14px;padding:26px 22px 20px;box-shadow:0 20px 60px rgba(0,0,0,.35);position:relative;font-family:'Montserrat',sans-serif;color:#0F1E38}
+#wcap .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:28px;line-height:1;color:#8a8f99;cursor:pointer;padding:6px}
+#wcap .tg{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8F6E33;font-weight:700}
+#wcap h3{font-size:21px;line-height:1.25;margin:8px 0 6px;font-weight:700}
+#wcap p.s{font-size:14px;line-height:1.45!important;color:#4a5263;margin:0 0 16px}
+#wcap label{display:block;font-size:13px;font-weight:600;margin:10px 0 5px}
+#wcap input{width:100%;font-size:16px;padding:13px 12px;border:1.5px solid #d5d9e0;border-radius:8px;font-family:inherit;color:#0F1E38}
+#wcap input:focus{outline:none;border-color:#B8924A}
+#wcap .go{margin-top:16px;width:100%;border:0;border-radius:8px;background:#25D366;color:#fff;font-size:16px;font-weight:700;padding:15px 12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+#wcap .go svg{width:20px;height:20px}
+#wcap .er{color:#b3261e;font-size:13px;margin-top:8px;display:none}
+#wcap .sk{display:block;margin:14px auto 0;background:none;border:0;color:#6b7280;font-size:13px;text-decoration:underline;cursor:pointer;font-family:inherit}
+#wcap .lg{font-size:11px;color:#8a8f99;text-align:center;margin-top:10px}
+</style>
+<div id="wcap" role="dialog" aria-modal="true" aria-labelledby="wcapT">
+  <div class="bx">
+    <button type="button" class="x" aria-label="Fechar">×</button>
+    <div class="tg">Boulevard Butantã</div>
+    <h3 id="wcapT">Receba a tabela e as plantas no seu WhatsApp</h3>
+    <p class="s">Deixe seu nome e WhatsApp. Se a conversa não abrir, eu mesmo te chamo.</p>
+    <form id="wcapF" novalidate>
+      <label for="wcapN">Seu nome</label>
+      <input id="wcapN" name="nome" autocomplete="name" placeholder="Ex.: Maria">
+      <label for="wcapT2">Seu WhatsApp</label>
+      <input id="wcapT2" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999">
+      <div class="er" id="wcapE">Coloque seu nome e um WhatsApp com DDD.</div>
+      <button type="submit" class="go"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Abrir WhatsApp</button>
+    </form>
+    <button type="button" class="sk" id="wcapS">Prefiro só abrir o WhatsApp</button>
+    <div class="lg">Seus dados são usados só para este atendimento.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var box=document.getElementById('wcap'),f=document.getElementById('wcapF'),nI=document.getElementById('wcapN'),tI=document.getElementById('wcapT2'),er=document.getElementById('wcapE');
+  var alvo=null;
+  function texto(h){try{return new URL(h).searchParams.get('text')||''}catch(e){return ''}}
+  function abre(h){alvo=h;er.style.display='none';box.classList.add('on');setTimeout(function(){nI.focus()},50);}
+  function fecha(){box.classList.remove('on');}
+  function vai(h){window.location.href=h;}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me"]'):null;
+    if(!a||box.contains(a))return;
+    e.preventDefault();e.stopPropagation();
+    abre(a.href);
+  },true);
+  box.querySelector('.x').addEventListener('click',fecha);
+  box.addEventListener('click',function(e){if(e.target===box)fecha();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('on'))fecha();});
+  tI.addEventListener('input',function(){var d=tI.value.replace(/\D/g,'').slice(0,11);var o=d;if(d.length>2)o='('+d.slice(0,2)+') '+d.slice(2);if(d.length>7)o='('+d.slice(0,2)+') '+d.slice(2,d.length-4)+'-'+d.slice(-4);tI.value=o;});
+  document.getElementById('wcapS').addEventListener('click',function(){
+    if(typeof gtag!=='undefined')gtag('event','clique_contato',{tipo:'whatsapp_sem_dados'});
+    var h=alvo;fecha();if(h)vai(h);
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=nI.value.trim(),t=tI.value.trim(),d=t.replace(/\D/g,'');
+    if(n.length<2||d.length<10){er.style.display='block';return;}
+    var pedido=texto(alvo);
+    ['fs','w3'].forEach(function(k){
+      var fd=new FormData();
+      if(k==='fs'){fd.append('_subject','📲 Lead WhatsApp — Boulevard Butantã');fd.append('_template','table');fd.append('_captcha','false');}
+      else{fd.append('access_key','9fb55495-8c62-4b0b-b5e4-1dc0383e30de');fd.append('subject','📲 Lead WhatsApp — Boulevard Butantã');fd.append('from_name','Site Boulevard Butantã');}
+      fd.append('Nome',n);fd.append('WhatsApp',t);fd.append('Pedido',pedido||'Informações do Boulevard Butantã');fd.append('Origem','Botão WhatsApp — dialogobutanta.com.br');
+      try{fetch(k==='fs'?'https://formsubmit.co/contato@siqueiracamposimoveis.com.br':'https://api.web3forms.com/submit',k==='fs'?{method:'POST',mode:'no-cors',body:fd,keepalive:true}:{method:'POST',body:fd,keepalive:true}).catch(function(){});}catch(x){}
+    });
+    if(typeof gtag!=='undefined'){
+      var tel=d.indexOf('55')===0?d:'55'+d;try{gtag('set','user_data',{phone_number:'+'+tel});}catch(x){}
+      gtag('event','generate_lead',{form:'whatsapp_janela'});
+      if(typeof WPP_CONV!=='undefined'&&WPP_CONV)gtag('event','conversion',{'send_to':WPP_CONV});
+    }
+    var msg=(pedido?pedido+' ':'Olá Siqueira Campos! ')+'Meu nome é '+n+'.';
+    var h='https://wa.me/5511960998000?text='+encodeURIComponent(msg);
+    fecha();setTimeout(function(){vai(h);},350);
+  });
+})();
+</script>
+</body>
 </html>
